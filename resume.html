@@ -3,330 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aromal Ashok - Resume</title>
+    <title>Aromal Ashok – A4 (CodeIgniter project)</title>
+    <!-- Bootstrap 5 core + icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-        
         body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.5;
-            font-size: 14px;
-        }
-        
-        .resume-container {
-            max-width: 8.5in;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 0.5in;
-        }
-        
-        /* Header Section */
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #2c3e50;
-        }
-        
-        .name {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #2c3e50;
-        }
-        
-        .contact-info {
+            background: #dde0e8;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
-        
-        .contact-item {
-            font-size: 13px;
+        .a4-sheet {
+            width: 210mm;
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            overflow: hidden;
         }
-        
-        /* Section Styles */
-        .section {
-            margin-bottom: 18px;
+        .print-toolbar {
+            background: #ffffff;
+            padding: 8px 28px;
+            text-align: right;
+            border-bottom: 1px solid #cbd5e1;
         }
-        
-        .section-title {
-            font-size: 16px;
-            font-weight: bold;
+        .print-btn {
+            background: #1a3b5d;
+            color: white;
+            border: none;
+            padding: 6px 24px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.15s;
+        }
+        .print-btn:hover {
+            background: #0f2b44;
+        }
+        .profile-header {
+            background: #132e48;
+            color: white;
+            padding: 16px 24px 14px 24px;
+        }
+        .profile-header h1 {
+            font-weight: 700;
+            font-size: 2.2rem;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin-bottom: 2px;
+        }
+        .subhead {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
             margin-bottom: 10px;
-            color: #2c3e50;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
         }
-        
-        /* Item Styles */
-        .item {
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 28px;
+            row-gap: 8px;
+            font-size: 0.85rem;
+        }
+        .contact-grid span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .contact-grid i {
+            color: #ffcf6e;
+            width: 16px;
+            font-size: 0.9rem;
+        }
+        .main-body {
+            padding: 16px 22px 14px 22px;
+        }
+        .row-custom {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+        .left-col {
+            width: 33.5%;
+            padding-right: 18px;
+            border-right: 1px solid #cfddee;
+        }
+        .right-col {
+            width: 66.5%;
+            padding-left: 18px;
+        }
+        .sec-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #132e48;
+            border-bottom: 2px solid #132e48;
+            padding-bottom: 3px;
+            margin: 12px 0 8px 0;
+        }
+        .sec-title:first-of-type {
+            margin-top: 0;
+        }
+        .summary {
+            font-size: 0.76rem;
+            line-height: 1.45;
+            text-align: justify;
+            color: #1f2a41;
+            margin-bottom: 6px;
+        }
+        .skill-block {
             margin-bottom: 12px;
         }
-        
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
+        .skill-block .label {
+            font-weight: 600;
+            font-size: 0.73rem;
+            text-transform: uppercase;
+            color: #244b6e;
+            margin-bottom: 4px;
         }
-        
-        .item-title {
-            font-weight: bold;
+        .skill-badge {
+            background: #e3ecf7;
+            color: #132e48;
+            font-size: 0.68rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 30px;
+            border: 1px solid #b9d0ef;
+            display: inline-block;
+            margin: 0 2px 5px 0;
+            white-space: nowrap;
         }
-        
-        .item-subtitle {
-            font-style: italic;
-            color: #555;
+        .edu-line {
+            font-size: 0.77rem;
+            margin-bottom: 6px;
         }
-        
-        .item-date {
-            font-weight: normal;
-            color: #555;
+        .edu-degree {
+            font-weight: 700;
+            color: #0b2b44;
         }
-        
-        ul {
-            padding-left: 20px;
+        .edu-school {
+            font-weight: 500;
+            color: #245e8f;
         }
-        
-        li {
-            margin-bottom: 5px;
-            text-align: justify;
+        .edu-date {
+            float: right;
+            color: #4f5f72;
+            font-weight: 400;
+            font-size: 0.7rem;
         }
-        
-        /* Skills Section */
-        .skills-container {
+        .exp-item {
+            margin-bottom: 14px;
+        }
+        .exp-header {
             display: flex;
             flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
         }
-        
-        .skill-category {
-            flex: 1;
-            min-width: 45%;
-            margin-right: 5%;
+        .exp-title {
+            font-weight: 700;
+            color: #0b2b44;
+            font-size: 0.83rem;
         }
-        
-        .skill-list {
-            list-style-type: none;
+        .exp-org {
+            font-weight: 600;
+            color: #1f568b;
+            font-size: 0.8rem;
+        }
+        .exp-badge {
+            background: #e3ecf7;
+            padding: 2px 10px;
+            border-radius: 40px;
+            font-size: 0.66rem;
+            font-weight: 600;
+            color: #132e48;
+            white-space: nowrap;
+        }
+        .exp-duties {
+            list-style: none;
             padding-left: 0;
+            margin-top: 3px;
+            margin-bottom: 0;
         }
-        
-        .skill-list li {
-            margin-bottom: 3px;
+        .exp-duties li {
+            font-size: 0.72rem;
+            color: #1e2c3c;
+            margin-bottom: 2px;
+            padding-left: 14px;
+            position: relative;
+            line-height: 1.4;
         }
-        
-        /* Print Styles */
+        .exp-duties li::before {
+            content: "▹";
+            color: #1f568b;
+            font-size: 0.75rem;
+            position: absolute;
+            left: 0;
+        }
+        .project-block {
+            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+        .project-header {
+            font-weight: 700;
+            color: #132e48;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        .project-tech {
+            font-size: 0.68rem;
+            color: #256ba0;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+        .project-desc {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 2px;
+        }
+        .project-desc li {
+            font-size: 0.7rem;
+            color: #1e2c3c;
+            margin-bottom: 1px;
+            padding-left: 14px;
+            position: relative;
+        }
+        .project-desc li::before {
+            content: "▪";
+            color: #1f568b;
+            font-size: 0.7rem;
+            position: absolute;
+            left: 2px;
+        }
+        hr {
+            margin: 6px 0 4px 0;
+            opacity: 0.3;
+        }
         @media print {
             body {
                 background: white;
-                font-size: 12px;
+                padding: 0;
             }
-            
-            .resume-container {
+            .a4-sheet {
                 box-shadow: none;
-                margin: 0;
-                padding: 0.4in;
-                max-width: 100%;
+                border-radius: 0;
             }
-            
-            .no-print {
+            .print-toolbar {
                 display: none;
             }
-            
-            .section {
-                margin-bottom: 12px;
+            .profile-header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            @page {
+                size: A4;
+                margin: 0.5cm 0.7cm;
             }
         }
-        
-        /* Ensure one page layout */
-        @media screen and (max-height: 11in) {
-            .resume-container {
-                margin: 10px auto;
+        @media (max-width: 700px) {
+            .left-col, .right-col {
+                width: 100%;
+                border-right: none;
+                padding: 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="resume-container">
-        <!-- Header Section -->
-        <header class="header">
-            <h1 class="name">Aromal Ashok</h1>
-            <div class="contact-info">
-                <div class="contact-item">+91 7510467519</div>
-                <div class="contact-item">aroma17510@gmail.com</div>
-                <div class="contact-item">Parippally, Kollam, Kerala, India</div>
-                <div class="contact-item">LinkedIn: linkedin.com/in/aromal-ashok-a97221241</div>
-            </div>
-        </header>
-        
-        <!-- Professional Summary -->
-        <section class="section">
-            <h2 class="section-title">Professional Summary</h2>
-            <p>
-                Master of Computer Applications graduate with Bachelor of Computer Applications background seeking Software Developer position. 
-                Proficient in PHP, MySQL, HTML, CSS, JavaScript, Laravel, Symfony, and web development technologies. 
-                Experienced in full-stack development, database management, MVC architecture, and Software Development Life Cycle. 
-                Strong problem-solving, teamwork, and communication skills. Passionate about learning new technologies and optimizing software performance.
-            </p>
-        </section>
-        
-        <!-- Education -->
-        <section class="section">
-            <h2 class="section-title">Education</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Master of Computer Applications (MCA)</div>
-                    <div class="item-date">2025</div>
-                </div>
-                <div class="item-subtitle">University of Kerala</div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Bachelor of Computer Applications (BCA)</div>
-                    <div class="item-date">2022</div>
-                </div>
-                <div class="item-subtitle">University of Kerala</div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Higher Secondary (Science)</div>
-                    <div class="item-date">2019</div>
-                </div>
-                <div class="item-subtitle">Kerala State Board</div>
-            </div>
-        </section>
-        
-        <!-- Work Experience -->
-        <section class="section">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">PHP Developer</div>
-                    <div class="item-date">2025 – Present</div>
-                </div>
-                <div class="item-subtitle">AddiTech Solutions Pvt Ltd, Technopark, Kerala</div>
-                <ul>
-                    <li>Develop back-end and full-stack solutions using PHP, MySQL, and MVC architecture</li>
-                    <li>Create responsive front-end interfaces with HTML, CSS, JavaScript, Bootstrap, jQuery, and AJAX</li>
-                    <li>Implement asynchronous data handling using AJAX and jQuery for dynamic web applications</li>
-                    <li>Collaborate with cross-functional teams to develop scalable and maintainable systems</li>
-                    <li>Optimize application performance, debug issues, and ensure cross-browser compatibility</li>
-                    <li>Deploy and manage code updates using FileZilla FTP client</li>
-                    <li>Develop and maintain School Management System with modules for student admission, attendance, fee management, and reporting</li>
-                    <li>Work on trade software solutions for business process automation and efficiency improvement</li>
-                </ul>
-            </div>
-        </section>
-        
-        <!-- Internships -->
-        <section class="section">
-            <h2 class="section-title">Internships</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Software Intern</div>
-                    <div class="item-date">3 Months</div>
-                </div>
-                <div class="item-subtitle">Smarthms & Solutions Pvt Ltd, Technopark, Trivandrum</div>
-                <ul>
-                    <li>Developed and maintained web applications using HTML, CSS, Bootstrap, PHP, and Symfony</li>
-                    <li>Utilized Symfony framework with MongoDB database for scalable web solutions</li>
-                    <li>Assisted in full-stack development and software testing procedures</li>
-                    <li>Gained practical experience in Software Development Life Cycle methodologies</li>
-                </ul>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Software Trainee</div>
-                    <div class="item-date">4 Months</div>
-                </div>
-                <div class="item-subtitle">Logiprompt Techno Solutions India Pvt Ltd, Trivandrum</div>
-                <ul>
-                    <li>Contributed to front-end and back-end development using PHP and Laravel framework</li>
-                    <li>Designed responsive user interfaces using Bootstrap CSS framework</li>
-                    <li>Assisted in debugging and optimizing code for improved efficiency</li>
-                    <li>Worked on Pushpagiri Dental Hospital College Management System including patient registration, appointment scheduling, and billing modules</li>
-                </ul>
-            </div>
-        </section>
-        
-        <!-- Technical Skills -->
-        <section class="section">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <ul class="skill-list">
-                        <li><strong>Programming Languages:</strong> PHP, Java, Python</li>
-                        <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript, Bootstrap, jQuery, AJAX</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <ul class="skill-list">
-                        <li><strong>Databases:</strong> MySQL, MongoDB</li>
-                        <li><strong>Frameworks:</strong> Symfony, CodeIgniter, Laravel</li>
-                        <li><strong>Development Methodologies:</strong> SDLC, MVC Architecture, OOP</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Projects -->
-        <section class="section">
-            <h2 class="section-title">Projects</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Assistant 360</div>
-                </div>
-                <p><strong>Technologies:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
-                <p>Developed a task management web application to enhance productivity and task organization</p>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Assistant 4U</div>
-                </div>
-                <p><strong>Technologies:</strong> Python, MySQL, HTML, CSS, Bootstrap</p>
-                <p>Created a web-based automation tool for assistance-based tasks and workflow optimization</p>
-            </div>
-        </section>
-        
-        <!-- Certifications -->
-        <section class="section">
-            <h2 class="section-title">Certifications</h2>
-            <div class="item">
-                <p>Web Technology – SWAYAM Online</p>
-            </div>
-        </section>
-        
-        <!-- Print Button -->
-        <div class="no-print" style="text-align: center; margin-top: 20px;">
-            <button onclick="window.print()" style="padding: 8px 16px; background: #2c3e50; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                Print or Save as PDF
-            </button>
+<div class="a4-sheet">
+    <div class="print-toolbar">
+        <button class="print-btn" onclick="window.print()"><i class="bi bi-printer me-2"></i>Print / PDF (A4)</button>
+    </div>
+
+    <!-- header -->
+    <div class="profile-header">
+        <h1>AROMAL ASHOK</h1>
+        <div class="subhead">PHP Developer • Full‑Stack • ERP & Dashboard Specialist</div>
+        <div class="contact-grid">
+            <span><i class="bi bi-geo-alt-fill"></i>Parippally, Kollam, Kerala</span>
+            <span><i class="bi bi-telephone-fill"></i>+91 75104 67519</span>
+            <span><i class="bi bi-envelope-fill"></i>aromal7510@gmail.com</span>
+            <span><i class="bi bi-linkedin"></i>https://www.linkedin.com/in/aromal-ashok-a97221241?utm_source=share_via&utm_content=profile&utm_medium=member_android</span>
         </div>
     </div>
 
-    <script>
-        // Simple JavaScript for additional functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add print functionality
-            const printButton = document.querySelector('button');
-            if(printButton) {
-                printButton.addEventListener('click', function() {
-                    window.print();
-                });
-            }
-            
-            // Log for debugging
-            console.log('ATS-Friendly Resume loaded successfully');
-        });
-    </script>
+    <div class="main-body">
+        <div class="row-custom">
+            <!-- LEFT COLUMN (summary, skills, education, certs) -->
+            <div class="left-col">
+                <div class="sec-title">Summary</div>
+                <div class="summary">
+                    MCA graduate with 1.8+ year PHP developer experience. Skilled in Laravel, Symfony, CodeIgniter, MVC, OOP, MySQL, MongoDB. Built ERP modules, dashboards, PDF generators. Quick learner, detail-oriented.
+                </div>
+
+                <div class="sec-title">Skills</div>
+                <div class="skill-block">
+                    <div class="label">Languages & core</div>
+                    <span class="skill-badge">PHP</span><span class="skill-badge">Python</span><span class="skill-badge">Java (basic)</span><span class="skill-badge">OOP</span><span class="skill-badge">MVC</span>
+                </div>
+                <div class="skill-block">
+                    <div class="label">Web & UI</div>
+                    <span class="skill-badge">HTML5</span><span class="skill-badge">CSS3</span><span class="skill-badge">JavaScript</span><span class="skill-badge">jQuery</span><span class="skill-badge">AJAX</span><span class="skill-badge">Bootstrap</span>
+                </div>
+                <div class="skill-block">
+                    <div class="label">Frameworks & DB</div>
+                    <span class="skill-badge">Laravel</span><span class="skill-badge">Symfony</span><span class="skill-badge">CodeIgniter</span><span class="skill-badge">MySQL</span><span class="skill-badge">MongoDB</span>
+                </div>
+                <div class="skill-block">
+                    <div class="label">Tools & practices</div>
+                    <span class="skill-badge">SDLC</span><span class="skill-badge">FileZilla</span><span class="skill-badge">MPDF</span><span class="skill-badge">cPanel</span><span class="skill-badge">Debugging</span><span class="skill-badge">Unit Testing</span>
+                </div>
+
+                <div class="sec-title">Education</div>
+                <div class="edu-line"><span class="edu-degree">MCA</span> <span class="edu-school">University of Kerala</span> <span class="edu-date">2025</span></div>
+                <div class="edu-line"><span class="edu-degree">BCA</span> <span class="edu-school">University of Kerala</span> <span class="edu-date">2022</span></div>
+                <div class="edu-line"><span class="edu-degree">Higher Secondary</span> <span class="edu-school">Kerala Board</span> <span class="edu-date">2019</span></div>
+                <div class="edu-line"><span class="edu-degree">SSLC</span> <span class="edu-school">Kerala Board</span> <span class="edu-date">2017</span></div>
+                <div class="summary" style="font-size:0.7rem;"><i class="bi bi-translate me-1"></i> Malayalam (native), English (fluent)</div>
+            </div>
+
+            <!-- RIGHT COLUMN – Experience, internships, and projects with CodeIgniter -->
+            <div class="right-col">
+                <!-- Experience: AadilTech -->
+                <div class="sec-title">Experience</div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">PHP Developer (Full‑time)</span>
+                        <span class="exp-badge">2025 – present</span>
+                    </div>
+                    <div class="exp-org">AadilTech Solutions Pvt Ltd, Technopark</div>
+                    <ul class="exp-duties">
+                        <li><strong>ERP architecture & development:</strong> Spearheaded development of two flagship products – School ERP (admission, attendance, fees, examination) and Trade ERP (purchase, sales, inventory, payment reconciliation).</li>
+                        <li><strong>Dashboard & analytics:</strong> Designed interactive dashboards using Chart.js and custom PHP aggregations; built role‑specific views for admin, teacher, accountant, and manager with row‑level security.</li>
+                        <li><strong>Advanced PDF engine:</strong> Integrated <strong>MPDF</strong> to generate 10+ document types: fee invoices, admission forms, transfer certificates, salary slips, ID cards with barcode, and bulk report cards.</li>
+                        <li>Developed reusable PHP libraries for common ERP functions – dynamic filters, export to Excel, audit logs, and soft‑delete.</li>
+                        <li>Built event‑driven modules using AJAX for real‑time fee payment status, attendance marking, and notification badges.</li>
+                        <li><strong>Integration & deployment:</strong> Deployed updates via FileZilla, maintained staging/production environments, managed cPanel, cron jobs for fee reminders.</li>
+                        <li>Conducted code reviews, wrote unit tests for critical modules.</li>
+                        <li><strong>Client collaboration:</strong> Gathered requirements from school admins and trade clients, translated into technical specs, and delivered UAT with quick turnaround.</li>
+                        <li>Mentored two junior interns in PHP OOP, MVC, and debugging techniques; conducted knowledge‑transfer sessions.</li>
+                    </ul>
+                </div>
+
+                <!-- Internships -->
+                <div class="sec-title">Internships</div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Software Intern</span>
+                        <span class="exp-badge">3 months</span>
+                    </div>
+                    <div class="exp-org">Smarthms & Solutions Pvt Ltd, Technopark</div>
+                    <ul class="exp-duties">
+                        <li>Developed web modules using <strong>PHP, Symfony, MongoDB</strong> – followed MVC best practices.</li>
+                        <li>Built responsive front‑end with Bootstrap, HTML5, CSS3; improved UX for internal tools.</li>
+                        <li>Assisted in testing, debugging, and code reviews.</li>
+                        <li>Participated in daily scrums, sprint planning, and documented technical specs.</li>
+                        <li>Worked on MongoDB aggregation pipelines and Symfony forms/validation.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Software Trainee</span>
+                        <span class="exp-badge">4 months</span>
+                    </div>
+                    <div class="exp-org">Logiprompt Techno Solutions, Trivandrum</div>
+                    <ul class="exp-duties">
+                        <li>Contributed to <strong>Hospital Management System</strong> (Laravel, MySQL) – patient registration, appointments, billing.</li>
+                        <li>Designed responsive UI with Bootstrap; made modules mobile‑friendly.</li>
+                        <li>Wrote complex MySQL queries for reports (daily appointments, revenue).</li>
+                        <li>Optimized database queries, added caching for faster loading.</li>
+                    </ul>
+                </div>
+            </div>
+        </div><br><br><br>
+        
+        <!-- PROJECTS section – with CodeIgniter in main project -->
+        <div class="sec-title">Projects</div>
+
+        <!-- Trade ERP & School Management System – now with CodeIgniter -->
+        <div class="project-block">
+            <span class="project-header">Trade ERP & School Management System</span>
+            <span class="project-tech">CodeIgniter, Core PHP, MySQL, Bootstrap</span>
+            <ul class="project-desc">
+                <li>Developed a web-based ERP and School Management System using <strong>CodeIgniter</strong> framework and core PHP with MVC architecture and MySQL.</li>
+                <li>Implemented core ERP modules including Purchase, Inventory, Delivery Note, Sales, and Accounting.</li>
+                <li>Built vendor management, stock updates, and quantity calculation workflows.</li>
+                <li>Implemented delivery note and sales invoice modules with automatic stock deduction.</li>
+                <li>Implemented stock management features including stock updates, unit conversion, and low-stock monitoring.</li>
+                <li>Created business reports including sales reports, stock availability reports, and accounting reports.</li>
+                <li>Designed school management modules including student registration, class and division management, and staff management.</li>
+                <li>Implemented attendance management with daily and monthly attendance reports.</li>
+                <li>Developed fee management and fee collection modules with receipt generation and pending fee reports.</li>
+                <li>Developed a student worksheet module enabling teachers to create worksheets and monitor previously assigned worksheets for academic tracking.</li>
+            </ul>
+        </div>
+
+        <!-- WordPress Website Project -->
+        <div class="project-block">
+            <span class="project-header">WordPress Website</span>
+            <span class="project-tech">WordPress, Elementor, responsive design</span>
+            <ul class="project-desc">
+                <li>Designed and developed a static website using WordPress.</li>
+                <li>Customized WordPress themes to meet design and branding requirements.</li>
+                <li>Developed a static WordPress website using Elementor page builder.</li>
+                <li>Implemented responsive design for mobile and desktop compatibility.</li>
+            </ul>
+        </div>
+    </div>
+    <div style="height: 2px;"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
